@@ -28,10 +28,8 @@ export default function LoginScreen({ navigation }) {
       const ref = doc(db, 'users', user.uid);
       const snap = await getDoc(ref);
 
-      // ⚠️ usar 'name' que es el campo en Firebase
-      const name = snap.exists() && snap.data().name ? snap.data().name : '';
-
-      dispatch(setUsuario({ uid: user.uid, name, email: user.email }));
+      const nombre = snap.exists() && snap.data().name ? snap.data().name : '';
+      dispatch(setUsuario({ uid: user.uid, name: nombre, email: user.email }));
 
       navigation.replace('Inicio');
     } catch (error) {

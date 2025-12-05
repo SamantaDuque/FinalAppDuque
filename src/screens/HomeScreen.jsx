@@ -12,7 +12,7 @@ export default function HomeScreen() {
 
   const productos = useSelector(state => state.products.items);
   const categorias = useSelector(state => state.products.categorias);
-  // ⚠️ leer el campo 'name' guardado en authSlice
+  
   const name = useSelector(state => state.auth.usuario?.name);
 
   useEffect(() => {
